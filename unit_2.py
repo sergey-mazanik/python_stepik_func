@@ -34,3 +34,20 @@
 # repeat_phrase_n_times('Белье надевают под одежду', 4)
 
 
+# def get_max(a, b):
+#     return max(a, b)
+
+
+# def multiply(numbers: list) -> int:
+#     count = 1
+#     for i in numbers:
+#         count *= i
+#     return count
+
+
+# def get_reverse(my_str: str) -> str:
+#     return my_str[::-1]
+
+
+# def generate_n_chars(n: int, s: str) -> str:
+#     return n * s
