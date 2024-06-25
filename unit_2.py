@@ -51,3 +51,12 @@
 
 # def generate_n_chars(n: int, s: str) -> str:
 #     return n * s
+
+
+# def print_histogram(my_list: list) -> str:
+#     for i in my_list:
+#         print('*' * i)
+
+
+# def count_words(my_str: str) -> int:
+#     return len(my_str.split())
