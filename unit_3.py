@@ -105,3 +105,21 @@
 #
 #
 # print(create_tuples([1, 2, 3, 4], [5, 6, 7, 8]))
+
+
+# alpha = 'abcdefghijklmnopqrstuvwxyz'
+#
+#
+# def is_pangram(my_str: str):
+#     new_str = my_str.lower()
+#     s = ''
+#     for i in new_str:
+#         if i in alpha and i not in s:
+#             s += i
+#     s = ''.join(sorted(s))
+#     return s == alpha
+#
+#
+# print(is_pangram("The quick brown fox jumps over the lazy dog."))
+# print(is_pangram("Obviously not a pangram"))
+# print(is_pangram("How quickly daft jumping zebras vex!"))
