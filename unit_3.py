@@ -123,3 +123,125 @@
 # print(is_pangram("The quick brown fox jumps over the lazy dog."))
 # print(is_pangram("Obviously not a pangram"))
 # print(is_pangram("How quickly daft jumping zebras vex!"))
+
+
+# def translate_to_robber_lang(my_str: str) -> str:
+#     vowels = ['a', 'e', 'i', 'o', 'u']
+#     new_str = ''
+#     for i in my_str:
+#         if i.lower() not in vowels and i.isalpha():
+#             new_str += f'{i}o{i}'
+#         else:
+#             new_str += i
+#     return new_str
+#
+#
+# print(translate_to_robber_lang("This is kinda fun"))
+# print(translate_to_robber_lang("I Think YoU Might BE righT!"))
+
+# def is_table_free(table_number: int) -> bool:
+#     return bool(not tables[table_number])
+#
+#
+# def get_free_tables():
+#     free_tables = [key for key, value in tables.items() if not value]
+#     return free_tables
+
+
+# def reserve_table(table_number: int, client_name: str) -> None:
+#     if is_table_free(table_number):
+#         tables[table_number] = client_name
+#
+#
+# def delete_reservation(table_number: int) -> None:
+#     tables[table_number] = None
+
+
+# def reserve_table(table_number: int, client_name: str, client_status: bool) -> None:
+#     if is_table_free(table_number):
+#         tables[table_number] = {'name': client_name, 'is_vip': client_status}
+
+
+# def product(my_list: list, start: int = 1) -> int:
+#     for i in my_list:
+#         start *= i
+#     return start
+#
+#
+# print(product([1, 2, 3]))
+# print(product([1, 2, 3], start=10))
+
+
+# shopping_list = {}
+#
+#
+# def add_item(product_name: str, count: int = 1):
+#     if shopping_list.get(product_name) is None:
+#         shopping_list.setdefault(product_name, count)
+#     else:
+#         shopping_list[product_name] = shopping_list[product_name] + count
+
+
+# def show_list(include_quantities: bool = True):
+#     if include_quantities:
+#         for k, v in shopping_list.items():
+#             print(f'{v}x{k}')
+#     else:
+#         for k, v in shopping_list.items():
+#             print(k)
+
+
+# def create_student(name, age, marks=None):
+#     if marks is not None:
+#         marks = marks
+#     else:
+#         marks = []
+#     return {
+#         'name': name,
+#         'age': age,
+#         'marks': marks  # оценки
+#     }
+#
+#
+# def add_mark(student, mark):
+#     student['marks'].append(mark)
+
+
+# def calculate_per_person(bill: float, count: int, tip_percent: int = 10):
+#     tip = bill / 100 * tip_percent
+#     return round((bill + tip) / count, 2)
+#
+#
+# print(calculate_per_person(100.0, 5, 0))
+# print(calculate_per_person(200.0, 4))
+# print(calculate_per_person(200.0, 4, 50))
+
+
+# def is_table_free(table_number: int) -> bool:
+#     return bool(not tables[table_number])
+#
+#
+# def delete_reservation(table_number: int) -> None:
+#     tables[table_number] = None
+#
+#
+# def reserve_table(table_number: int, client_name: str, client_status: bool = False) -> None:
+#     if is_table_free(table_number):
+#         tables[table_number] = {'name': client_name, 'is_vip': client_status}
+#
+#
+# tables = {
+#     1: {'name': 'Andrey', 'is_vip': True},
+#     2: None,
+#     3: None,
+#     4: None,
+#     5: None,
+#     6: None,
+#     7: None,
+#     8: None,
+#     9: {'name': 'Misha', 'is_vip': False},
+# }
+# print(tables)
+# reserve_table(2, 'Niko', True)
+# reserve_table(6, 'Chubaka') # не передается вип-статус
+# print(tables)
