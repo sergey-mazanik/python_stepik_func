@@ -245,3 +245,51 @@
 # reserve_table(2, 'Niko', True)
 # reserve_table(6, 'Chubaka') # не передается вип-статус
 # print(tables)
+
+
+# def words_length(words: list):
+#     for i in range(len(words)):
+#         words[i] = len(words[i])
+
+
+# def my_func(collection, n):
+#     new_collection = collection.copy()
+#     for i in range(1, n + 1):
+#         new_collection.append(i)
+#     return new_collection
+
+
+# def print_values(*args):
+#     for i in args:
+#         print(*i, end=' ')
+
+
+# def count_args(*args):
+#     return len(args)
+
+
+# def multiply(*args):
+#     res = 1
+#     for i in args:
+#         res *= i
+#     return res
+
+
+# def check_sum(*args):
+#     print('not enough' if sum(args) < 50 else 'verification passed')
+
+
+# def is_only_one_positive(*args) -> bool:
+#     return len(list(filter(lambda x: x > 0, args))) == 1
+
+
+# def print_goods(*args):
+#     lst = []
+#     for i in args:
+#         if isinstance(i, str) and i:
+#             lst.append(i)
+#     if lst:
+#         for n, i in enumerate(lst, 1):
+#             print(f'{n}. {i}')
+#     else:
+#         print('Нет товаров')
