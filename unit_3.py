@@ -293,3 +293,46 @@
 #             print(f'{n}. {i}')
 #     else:
 #         print('Нет товаров')
+
+
+# def print_args(a, b, c, d):
+#     print(a, b, c, d)
+#
+#
+# dct = {'a': 100, 'b': 200, 'c': 300, 'd': 400}
+# print_args(**dct)
+
+
+# def concatenate(**kwargs):
+#     return ''.join([str(v) for v in kwargs.values()])
+#
+#
+# print(concatenate(a="Я", b="Выучу", c="Этот", d="Питон", e="!"))
+# print(concatenate(first='i got ', second=5, third=" stars"))
+# print(concatenate(t='Happy', y="Meal", w="Cost", m=10, b='Buks'))
+# print(concatenate(q='iHave', w="next", e="Coins", r=[10, 5, 10, 7]))
+
+
+# def create_actor(**kwargs):
+#     base_dict = {
+#             'name': 'Райан',
+#             'surname': 'Рейнольдс',
+#             'age': 47,
+#             }
+#     if not kwargs:
+#         return base_dict
+#     return {**base_dict, **kwargs}
+#
+#
+# actor = create_actor(surname='Уиллис', age=69, name='Брюс')
+# print(actor)
+
+
+# def info_kwargs(**kwargs):
+#     print(*sorted([f'{k} = {v}' for k, v in kwargs.items()]), sep='\n')
+#
+#
+# info_kwargs(first_name="John", last_name="Doe", age=33)
+# info_kwargs(c=43, b= 32, a=32)
+# info_kwargs(b=3,c=2,a=1)
+# info_kwargs(cool='hello')
