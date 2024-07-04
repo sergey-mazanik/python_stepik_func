@@ -336,3 +336,41 @@
 # info_kwargs(c=43, b= 32, a=32)
 # info_kwargs(b=3,c=2,a=1)
 # info_kwargs(cool='hello')
+
+
+# def print_scores(name, *args):
+#     print(f'Student name: {name}')
+#     print(*sorted(args), sep='\n')
+#
+#
+# print_scores("Jud", 100, 95, 88, 92, 99)
+
+
+# def truncate_sentences(num, *args):
+#     lst = [i[:num] for i in args]
+#     print(*lst, sep='\n')
+#
+#
+# truncate_sentences(
+#     5,
+#     "Мой дядя самых честных правил,",
+#     "Когда не в шутку занемог,",
+#     "Он уважать себя заставил",
+#     "И лучше выдумать не мог.",
+#     "Его пример другим наука;",
+#     "Но, боже мой, какая скука",
+#     "С больным сидеть и день и ночь,",
+#     "Не отходя ни шагу прочь!",
+# )
+
+
+# def make_strings_big(*args, reverse=False):
+#     if reverse:
+#         print(*[arg.lower() for arg in args], sep='\n')
+#     else:
+#         print(*[arg.upper() for arg in args], sep='\n')
+#
+#
+# make_strings_big('У лукоморья дуб зелёный',
+#                  'Златая цепь на дубе том:',
+#                  'И днём и ночью кот учёный')
