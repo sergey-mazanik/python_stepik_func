@@ -50,5 +50,3 @@
 #
 # currency = convert("GBP", "USD", 100)
 # print(currency)
-
-# check
