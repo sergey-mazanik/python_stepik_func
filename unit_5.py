@@ -50,3 +50,34 @@
 #
 # currency = convert("GBP", "USD", 100)
 # print(currency)
+
+
+# square = lambda x, y: x**2 + y**2
+
+
+# adding_10 = lambda x: x + 10
+
+
+# starts_with = lambda str: str.startswith('W')
+
+
+# check_word = lambda str: (
+#         (str.upper().startswith('Q') or str.upper().startswith('R')) and str[-1].upper() in ['A', 'E', 'I', 'U', 'O']
+# )
+
+
+
+# def is_leap(year: int) -> bool:
+#     return year % 400 == 0 or (year % 100 != 0 and year % 4 == 0)
+
+
+# is_leap = lambda year: year % 400 == 0 or (year % 100 != 0 and year % 4 == 0)
+
+
+# sale_lambda = lambda x: x * 0.9
+
+
+# sale_lambda = lambda x: x * 0.9 if x > 50 else x
+
+
+# average = lambda *args: sum(args) / len(args)
