@@ -80,3 +80,64 @@
 
 
 # average = lambda *args: sum(args) / len(args)
+
+
+# def print_results(lst: list[tuple]):
+#     for i in sorted(lst, key=lambda x: x[1]):
+#         print(*i)
+#
+#
+# marks = [('English', 88), ('Science', 100), ('Maths', 81),
+#          ('Physics', 100), ('History', 82), ('Music', 100)]
+# print_results(marks)
+
+
+# def print_results(lst: list[tuple]):
+#     for i in sorted(lst, key=lambda x: -x[1]):
+#         print(*i)
+#
+#
+# marks = [('English', 88), ('Science', 90), ('Maths', 97), ('Physics', 93), ('History', 82)]
+# print_results(marks)
+
+
+# def print_results(lst: list[tuple]):
+#     temp_lst = sorted(lst, key=lambda x: x[0].lower())
+#     for i in sorted(temp_lst, key=lambda x: x[1], reverse=True):
+#         print(*i)
+#
+#
+# marks = [('english', 100), ('Science', 100), ('maths', 100),
+#          ('Physics', 100), ('history', 100), ('Music', 100)]
+# print_results(marks)
+
+
+# def print_results(lst: list[tuple]):
+#     temp_lst = sorted(lst, key=lambda x: x[0].lower(), reverse=True)
+#     for i in sorted(temp_lst, key=lambda x: x[1], reverse=True):
+#         print(*i)
+#
+#
+# marks = [('English', 88), ('Science', 90), ('Maths', 88),
+#          ('Physics', 93), ('History', 78), ('French', 78),
+#          ('Art', 78), ('Chemistry', 88), ('Programming', 91)]
+# print_results(marks)
+# print('-' * 20)
+# marks = [('english', 100), ('Science', 100), ('maths', 100),
+#          ('Physics', 100), ('history', 100), ('Music', 100)]
+# print_results(marks)
+
+
+# def get_sort_lines(lst: list[tuple]):
+#     temp_lst = sorted(lst, key=lambda x: (x[0], x[1]))
+#     return sorted(temp_lst, key=lambda x: (x[1] - x[0]) if x[1] > x[0] else (x[0] - x[1]))
+#
+#
+# lines = [(-4, 4), (2, 3), (5, 9), (-1, -3)]
+# print(get_sort_lines(lines))
+# print('-' * 20)
+# lines = [(5, 4), (2, 3), (1, 0), (-1, -2)]
+# print(get_sort_lines(lines))
+# print('-' * 20)
+# lines = [(5, 6), (5, 4), (1, 0), (0, -1), (1, 2), (2, 1)]
+# print(get_sort_lines(lines))
