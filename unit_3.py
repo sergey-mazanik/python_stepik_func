@@ -441,3 +441,44 @@
 # delete_order(number_table=2, drink=True, desert=True, call=True, шаурма=True, cheesecake=True)
 # delete_order(number_table=1, soup=True, desert=True, call=True)
 # print(tables)
+
+
+# def is_dunder(line: str):
+#     return line[2:-2].isalpha() and line.startswith('__') and line.endswith('__') and len(line.strip('__')) >= 2
+#
+# assert is_dunder('__str__') == True
+# assert is_dunder('___bool___') == False
+# assert is_dunder('__s__') == False
+# assert is_dunder('__abvc3__') == False
+# assert is_dunder('____') == False
+# assert is_dunder('_str__') == False
+# assert is_dunder('__str_') == False
+# assert is_dunder('__ab__') == True
+
+
+# def make_header(text: str, level: int) -> str:
+#     return f'<h{level}>{text}</h{level}>'
+#
+# print(make_header('Нет', 1))
+# print(make_header('Bella Ciao', 4))
+# print(make_header(text='Go little rock star', level=6))
+# print(make_header(level=2, text='Девальвации не будет. Твердо и четко'))
+
+
+# def replace(text: str, old: str, new: str = None) -> str:
+#     return text.replace(old, new) if new else text.replace(old, '')
+#
+#
+# print(replace('Нет', 'т'))
+# print(replace('Bella Ciao', 'a'))
+# print(replace('nobody; i myself farewell analysis', 'l', 'z'))
+
+
+# def create_matrix(size: int = 3, up_fill: int = 0, down_fill: int = 0) -> list:
+#     matrix = []
+#     for i in range(1, size + 1):
+#         temp = [i if i == j else up_fill if i < j else down_fill if i > j else 0 for j in range(1, size + 1)]
+#         matrix.append(temp)
+#     return matrix
+#
+# print(create_matrix(up_fill=7, down_fill=9))
