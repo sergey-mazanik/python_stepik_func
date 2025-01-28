@@ -482,3 +482,25 @@
 #     return matrix
 #
 # print(create_matrix(up_fill=7, down_fill=9))
+
+
+# def lstrip(lst: list, value: int) -> None:
+#     while lst and lst[0] == value:
+#         lst.pop(0)
+#
+# data = [1, 0, 0, 0, 2, 0, 3, 0]
+# print(data)
+# print(lstrip(data, 0))
+# print(data)
+
+
+# def lstrip(lst: list, value: int) -> list | None:
+#     new_lst = lst[:]
+#     while new_lst and new_lst[0] == value:
+#         new_lst.pop(0)
+#     return new_lst
+#
+# data = [1, 0, 0, 0, 2, 0, 3, 0]
+# print(data)
+# print(lstrip(data, 0))
+# print(data)
