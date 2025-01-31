@@ -254,3 +254,70 @@ from collections import defaultdict
 # ]
 #
 # print_statistic(data)
+
+
+# def get_info_about_object(obj: object) -> None:
+#     print(dir(obj))
+#     print(f"Всего у объекта {len(dir(obj))} атрибутов и методов")
+#
+# def print_goods(lst):
+#     pass
+#
+# print_goods.info = 'Функция для вывода информации о товарах'
+# print_goods.is_working = False
+# print_goods.status = 'Not ready'
+#
+# get_info_about_object(print_goods)
+
+
+# def check_exist_attrs(obj: object, lst: list[str]) -> dict[str, bool]:
+#     my_dict = {}
+#     for i in lst:
+#         my_dict[i] = hasattr(obj, i)
+#     return my_dict
+#
+#
+# def print_goods(lst):
+#     pass
+#
+# print_goods.is_working = False
+# print_goods.status = 'Not ready'
+#
+# print(check_exist_attrs(print_goods, ['is_working', 'status', 'time', 'speed']))
+
+
+# def create_attrs(obj: object, lst: list[tuple[str, ...]]):
+#     for i in lst:
+#         setattr(obj, i[0], i[1])
+#
+#
+# def print_goods(lst):
+#     pass
+#
+# create_attrs(print_goods, [('is_working', False), ('days', 10), ('status', 'Not ready')])
+#
+# print(check_exist_attrs(print_goods, ['sort', 'is_working', 'days', 'status', 'upper']))
+
+
+# def count_strings(*args) -> int:
+#     count = 0
+#     for i in args:
+#         if isinstance(i, str):
+#             count += 1
+#     return count
+#
+# print(count_strings())
+
+
+# def find_keys(**kwargs) -> list:
+#     lst = []
+#     for k, v in kwargs.items():
+#         if isinstance(v, (tuple, list)):
+#             lst.append(k)
+#     return sorted(lst, key=lambda x: x.lower())
+#
+#
+# print(find_keys(marks=[4, 5], name='Ashle', surname='Brown', age=20, Also=(1, 2)))
+# print(find_keys(t=[4, 5], w=[5, 3], A=(3, 2), a={2, 3}, b=[4]))
+# print(find_keys(marks=[4, 5], ashle=[5], surname='Brown', age=20, Also=(1, 2)))
+# print(find_keys(At=[4], awaited=(3,), aDobe=[5]))
