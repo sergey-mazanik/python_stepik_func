@@ -321,3 +321,93 @@ from collections import defaultdict
 # print(find_keys(t=[4, 5], w=[5, 3], A=(3, 2), a={2, 3}, b=[4]))
 # print(find_keys(marks=[4, 5], ashle=[5], surname='Brown', age=20, Also=(1, 2)))
 # print(find_keys(At=[4], awaited=(3,), aDobe=[5]))
+
+
+# def outer() -> None:
+#     def say_hello() -> None:
+#         print('hello')
+#
+#     def say_bye() -> None:
+#         print('bye')
+#
+#
+#     say_hello()
+#     say_bye()
+#
+# outer()
+
+
+# def wrap_increment(value):
+#     def _inc():
+#         return value + 1
+#     return _inc()
+#
+#
+# print(wrap_increment(45))
+
+
+# def get_extensions(file_list: list[str]):
+#     def _get_extension(ext: str):
+#         if "." in ext:
+#             return ext.split(".")[-1]
+#         else:
+#             return ""
+#     return [_get_extension(i) for i in file_list]
+#
+#
+# print(get_extensions(["foo.txt", "bar.mp4", "python3"]))
+
+
+# def double_odd_numbers(numbers: list[int]) -> list:
+#
+#     def double(num: int) -> int:
+#         return num * 2
+#
+#     def is_odd(num: int) -> bool:
+#         return num % 2 != 0
+#
+#     return [double(num) for num in numbers if is_odd(num)]
+#
+#
+#
+# assert(double_odd_numbers([1, 2, 3, 4, 5])) == [2, 6, 10]
+# assert(double_odd_numbers([6, 8, 10, 2])) == []
+# assert(double_odd_numbers([-43, 91, 932, 9201, 32, 93])) == [-86, 182, 18402, 186]
+# print("You are breathtaking!")
+
+
+# def calculate(x: int, y: int | float, operation: str = 'a') -> None:
+#
+#     def addition() -> None:
+#         print(x + y)
+#
+#     def subtraction() -> None:
+#         print(x - y)
+#
+#     def division() -> None:
+#         if y == 0:
+#             print('На ноль делить нельзя!')
+#         else:
+#             print(x / y)
+#
+#     def multiplication() -> None:
+#         print(x * y)
+#
+#     match operation:
+#         case 'a':
+#             addition()
+#         case 's':
+#             subtraction()
+#         case 'd':
+#             division()
+#         case 'm':
+#             multiplication()
+#         case _:
+#             print('Ошибка. Данной операции не существует')
+#
+#
+# calculate(10, 4, 's')  # == 6
+# calculate(10, 0, 'd')  # == 'На ноль делить нельзя!'
+# calculate(10, 4, 'w')  # == 'Ошибка. Данной операции не существует'
+# calculate(1, 2, 'a')  # == 3
+# calculate(3, 1, 'd')  # == 3.0
