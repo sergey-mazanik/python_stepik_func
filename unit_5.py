@@ -411,3 +411,136 @@ from collections import defaultdict
 # calculate(10, 4, 'w')  # == 'Ошибка. Данной операции не существует'
 # calculate(1, 2, 'a')  # == 3
 # calculate(3, 1, 'd')  # == 3.0
+
+
+# def apply(func, obj):
+#     return [func(i) for i in obj]
+#
+#
+# def repeater(value, n=5):
+#     return str(value) * n
+#
+#
+# print(apply(repeater, 'hello'))
+
+
+# def compute(lst: list, *args):
+#     new_lst = []
+#     for func in lst:
+#         for elem in args:
+#             new_lst.append(func(elem))
+#     return new_lst
+#
+#
+#
+# def inc(num):
+#     return num + 1
+#
+# def dec(num):
+#     return num - 1
+#
+# def repeater(value, n=10):
+#     return str(value) * n
+#
+# def square(num):
+#     return num ** 2
+#
+# print(compute([repeater, dec, inc, square], 5, 7, 0, True))
+
+
+# def compute(lst: list, *args):
+#     new_lst = []
+#     for elem in args:
+#         for func in lst:
+#             elem = func(elem)
+#         new_lst.append(elem)
+#     return new_lst
+#
+#
+# def inc(num):
+#     return num + 1
+#
+# def dec(num):
+#     return num - 1
+#
+# def repeater(value, n=3):
+#     return str(value) * n
+#
+# def square(num):
+#     return num ** 2
+#
+# print(compute([dec, inc, square, repeater], 5, 7, 0, True))
+
+
+# def filter_list(f: callable, lst: list[...]) -> list:
+#     return [i for i in lst if f(i)]
+#
+#
+# def is_positive(num):
+#     return num > 0
+#
+# numbers = [-1, 2, -3, 4, 5, -6, 7, -8, -9, 10]
+# positive_numbers = filter_list(is_positive, numbers) # берем только положительные
+# print(positive_numbers)
+
+
+# def filter_collection(f, obj):
+#     if isinstance(obj, list):
+#         return [i for i in obj if f(i)]
+#     elif isinstance(obj, tuple):
+#         return tuple([i for i in obj if f(i)])
+#     elif isinstance(obj, str):
+#         new_str = ''
+#         for i in obj:
+#             if f(i):
+#                 new_str += i
+#         return new_str
+#
+#
+# print(filter_collection(lambda x: x not in 'aeiou', 'I never heard those lyrics before'))
+
+
+# def aggregation(func, sequence):
+#     lst = [func(sequence[0], sequence[1])]
+#     for i in sequence[2:]:
+#         lst.append(func(i, lst[-1]))
+#     return lst
+#
+# def get_min(x, y):
+#     return min(x, y)
+#
+# # агрегируем нахождение минимума
+# print(aggregation(get_min, [9, 6, 7, 8, 5, 1, 2, 4]))
+
+
+# def aggregation(func, sequence):
+#     lst = [func(sequence[0], sequence[1])]
+#     temp = func(sequence[0], sequence[1])
+#     for i in sequence[2:]:
+#         temp = func(i, lst[-1])
+#         lst.append(func(i, lst[-1]))
+#     return temp
+#
+# def get_add(x, y):
+#     return x + y
+#
+# print(aggregation(get_add, [11, 4, 5, 7, 8, 10]))
+
+
+# def aggregation(func, sequence, initial = None):
+#     if initial:
+#         lst = [initial]
+#         temp = initial
+#         for i in sequence:
+#             temp = func(i, lst[-1])
+#             lst.append(func(i, lst[-1]))
+#         return temp
+#     else:
+#         lst = [func(sequence[0], sequence[1])]
+#         temp = func(sequence[0], sequence[1])
+#         for i in sequence[2:]:
+#             temp = func(i, lst[-1])
+#             lst.append(func(i, lst[-1]))
+#         return temp
+#
+# print(aggregation(lambda x, y: x * y, [2, 5, 10, 1, 2], initial=50))
