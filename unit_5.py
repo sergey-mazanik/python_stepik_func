@@ -18,6 +18,7 @@
 # for i in colors:
 #     print(f'{i()} - {colors[i]}')
 from collections import defaultdict
+from itertools import count
 
 
 # cache = {}
@@ -544,3 +545,149 @@ from collections import defaultdict
 #         return temp
 #
 # print(aggregation(lambda x, y: x * y, [2, 5, 10, 1, 2], initial=50))
+
+
+# def multiply(a: int) -> callable:
+#     def inner(b: int) -> int:
+#         return b * a
+#     return inner
+#
+#
+#
+# f_2 = multiply(2)
+# print("Умножение 2 на 5 =", f_2(5)) #10
+# print("Умножение 2 на 15 =", f_2(15)) #30
+# f_3 = multiply(3)
+# print("Умножение 3 на 5 =", f_3(5)) #15
+# print("Умножение 3 на 15 =", f_3(15)) #45
+
+
+# def make_repeater(num: int) -> callable:
+#     def inner(el: str) -> str:
+#         return num * el
+#     return inner
+#
+#
+# repeat_5 = make_repeater(5)
+# print(repeat_5('Hello'))
+# print(repeat_5('World'))
+#
+# repeat_2 = make_repeater(2)
+# print(repeat_2('Pizza'))
+# print(repeat_2('Pasta'))
+
+
+# def create_accumulator() -> callable:
+#     count = 0
+#     def inner(num: int | float) -> int | float:
+#         nonlocal count
+#         count += num
+#         return count
+#     return inner
+#
+#
+# closure = create_accumulator()
+#
+# print(closure(4))
+# print(closure(400))
+# print(closure(4.5))
+# print(closure(0.5))
+#
+# closure_2 = create_accumulator()
+#
+# print(closure_2(0))
+# print(closure_2(1))
+# print(closure_2(3))
+# print(closure_2(7))
+
+
+# def create_accumulator(a: int | float = 0) -> callable:
+#     count = a
+#     def inner(num: int | float) -> int | float:
+#         nonlocal count
+#         count += num
+#         return count
+#     return inner
+#
+#
+# closure = create_accumulator(300)
+#
+# print(closure(4))
+# print(closure(400))
+# print(closure(4.5))
+# print(closure(0.5))
+#
+# closure_2 = create_accumulator()
+#
+# print(closure_2(0))
+# print(closure_2(1))
+# print(closure_2(3))
+# print(closure_2(7))
+
+
+# def countdown(num: int) -> callable:
+#     count = num
+#     def inner() -> int | float | None:
+#         nonlocal count
+#         if count == 0:
+#             print(f'Превышен лимит, вы вызвали более {num} раз')
+#         else:
+#             print(count)
+#             count -= 1
+#             return count
+#     return inner
+#
+#
+# a = countdown(2)
+# b = countdown(2)
+# a()
+# b()
+# b()
+# b()
+# a()
+# a()
+
+
+# def count_calls():
+#     total_calls = 0
+#     def inner():
+#         nonlocal total_calls
+#         total_calls += 1
+#         inner.total_calls = total_calls
+#         return total_calls
+#     inner.total_calls = total_calls
+#     return inner
+#
+#
+#
+# counter1 = count_calls()
+# counter2 = count_calls()
+# counter1()
+# print(counter1.total_calls, counter2.total_calls)
+# counter1()
+# counter2()
+# print(counter1.total_calls, counter2.total_calls)
+# counter2()
+# counter2()
+# print(counter1.total_calls, counter2.total_calls)
+
+
+# def create_dict():
+#     my_dict = {}
+#     count = 0
+#     def add_to_dict(el: any):
+#         nonlocal count
+#         count += 1
+#         my_dict[count] = el
+#         return my_dict
+#     return add_to_dict
+#
+#
+# f_1 = create_dict()
+# print(f_1('privet'))
+# print(f_1('poka'))
+# print(f_1([5, 2, 3]))
+#
+# f2 = create_dict()
+# print(f2(5))
+# print(f2(15))
