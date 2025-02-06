@@ -691,3 +691,78 @@ from itertools import count
 # f2 = create_dict()
 # print(f2(5))
 # print(f2(15))
+
+
+# def decorator(func):
+#     def wrapper(*args, **kwargs):
+#         print('---Start calculation---')
+#         result = func(*args, **kwargs)
+#         print(f'---Finish calculation. Result is {result}---')
+#         return result
+#     return wrapper
+#
+#
+# # @decorator
+# # def add(a, b):
+# #     return a + b
+#
+#
+# @decorator
+# def concatenate(**kwargs):
+#     result = ""
+#     for arg in kwargs.values():
+#         result += str(arg)
+#     return result
+#
+#
+# concatenate(a="Я", b="Выучу", c="Этот", d="Питон", e="!")
+
+
+# def repeater(func):
+#     def wrapper(*args, **kwargs):
+#         for i in range(3):
+#             func(*args, **kwargs)
+#         return func
+#     return wrapper
+#
+#
+# @repeater
+# def some_func(a, b, c):
+#     print(a ** b + c)
+#
+#
+# some_func(4, 5, 4)
+# some_func(14, 51, 34)
+
+
+# def double_it(func):
+#     def wrapper(*args, **kwargs):
+#         result = func(*args, **kwargs)
+#         return result * 2
+#     return wrapper
+#
+#
+# @double_it
+# def get_sum_kwargs_values(**kwargs):
+#     return sum(kwargs.values())
+#
+#
+# print(get_sum_kwargs_values(a=4, b=5, c=7))
+# print(get_sum_kwargs_values(a=4, b=5, d=3, t=6, r=8))
+
+
+# def uppercase_elements(func):
+#     def wrapper(*args, **kwargs):
+#         temp = func(*args, **kwargs)
+#         if isinstance(temp, dict):
+#             return {(k.upper() if isinstance(k, str) else k): v for k, v in temp.items()}
+#         elif isinstance(temp, list):
+#             return [i.upper() if isinstance(i, str) else i for i in temp]
+#     return wrapper
+#
+#
+# @uppercase_elements
+# def my_func(**kwargs):
+#     return {1: 'one', 2: 'store', 'three': 3, 'four': 4} | kwargs
+#
+# print(my_func(**{'Five': 5, 'sIx': 6}))
