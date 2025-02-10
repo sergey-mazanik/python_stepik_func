@@ -19,6 +19,7 @@
 #     print(f'{i()} - {colors[i]}')
 from collections import defaultdict
 from itertools import count
+from sys import flags
 
 
 # cache = {}
@@ -766,3 +767,162 @@ from itertools import count
 #     return {1: 'one', 2: 'store', 'three': 3, 'four': 4} | kwargs
 #
 # print(my_func(**{'Five': 5, 'sIx': 6}))
+
+
+# def first_validator(func):
+#     def my_wrapper(*args, **kwargs):
+#         print(f"Начинаем важную проверку")
+#         if len(args) == 3:
+#             func(*args, **kwargs)
+#         else:
+#             print(f"Важная проверка не пройдена")
+#             return None
+#         print(f"Заканчиваем важную проверку")
+#
+#     return my_wrapper
+#
+#
+# def second_validator(func):
+#     def my_wrapper(*args, **kwargs):
+#         print(f"Начинаем самую важную проверку")
+#         if kwargs.get('name') == 'Boris':
+#             func(*args)
+#         else:
+#             print(f"Самая важная проверка не пройдена")
+#             return None
+#         print(f"Заканчиваем самую важную проверку")
+#
+#     return my_wrapper
+#
+#
+# # используйте декораторы
+# @second_validator
+# @first_validator
+# def sum_values(*args):
+#     print(f'Получили результат равный {sum(args)}')
+#
+#
+# # вызовите функцию sum_values()
+# sum_values(33, 33, 11, name='Boris')
+
+
+# def validate_all_args_str(func):
+#     def wrapper(*args, **kwargs):
+#         flag = False
+#         for arg in args:
+#             if not isinstance(arg, str):
+#                 print('Все аргументы должны быть строками')
+#                 flag = True
+#         if not flag:
+#             new = func(*args, **kwargs)
+#             return new
+#     return wrapper
+#
+#
+#
+# @validate_all_args_str
+# def concatenate(*args):
+#     result = ""
+#     for arg in args:
+#         result += arg
+#     return result
+#
+#
+# print(concatenate("Через", 9, "Месяцев"))
+
+
+# def validate_all_kwargs_int_pos(func):
+#     def wrapper(*args, **kwargs):
+#         flag = False
+#         for kwarg in kwargs.values():
+#             if not isinstance(kwarg, int) or kwarg <= 0:
+#                 print('Все именованные аргументы должны быть положительными числами')
+#                 flag = True
+#                 break
+#         if not flag:
+#             new = func(*args, **kwargs)
+#             return new
+#     return wrapper
+#
+#
+# @validate_all_kwargs_int_pos
+# def concatenate(*args, **kwargs):
+#     result = ""
+#     for arg in args + tuple(kwargs.values()):
+#         result += str(arg)
+#     return result
+#
+#
+# print(concatenate(a="i", b='Love', c="Python"))
+#
+# @validate_all_kwargs_int_pos
+# def concatenate(*args, **kwargs):
+#     result = ""
+#     for arg in args + tuple(kwargs.values()):
+#         result += str(arg)
+#     return result
+#
+#
+# print(concatenate(a=10, b=20, c=50))
+#
+# @validate_all_args_str
+# @validate_all_kwargs_int_pos
+# def concatenate(*args, **kwargs):
+#     result = ""
+#     for arg in args + tuple(kwargs.values()):
+#         result += str(arg)
+#     return result
+#
+# print(concatenate('Hello', 2, 'World', a="i", b='Love', c="Python"))
+
+
+# def filter_even(func):
+#     def wrapper(*args, **kwargs):
+#         lst = [
+#             arg for arg in args if
+#             (
+#                     (isinstance(arg, int) and arg % 2 == 0) or
+#                     (arg is False) or
+#                     (isinstance(arg, (tuple, str, list, dict)) and len(arg) % 2 == 0)
+#             )
+#         ]
+#         return func(*lst, **kwargs)
+#     return wrapper
+#
+#
+# def delete_short(func):
+#     def wrapper(*args, **kwargs):
+#         new_dict = {k: v for k, v in kwargs.items() if len(k) >= 5}
+#         return func(*args, **new_dict)
+#     return wrapper
+#
+#
+# @filter_even
+# def concatenate(*args):
+#     result = ""
+#     for arg in args:
+#         result += arg
+#     return result
+#
+# print(concatenate("Ну", "Когда", "Уже", "Я", "Выучу", "Питон?"))
+# print()
+#
+# @delete_short
+# def info_kwargs(**kwargs):
+#     """Выводит информацию о переданных kwargs"""
+#     for k, v in sorted(kwargs.items()):
+#         print(f'{k} = {v}')
+#
+# info_kwargs(first_name="John", last_name="Doe", age=33)
+# print()
+#
+# @filter_even
+# @delete_short
+# def concatenate(*args, **kwargs):
+#     result = ""
+#     for arg in args + tuple(kwargs.values()):
+#         result += str(arg)
+#     return result
+#
+#
+# print(concatenate([1], [1, 2], {1:1, 2:2}, {1:1}, a="За", qwer=10, ccccc="Месяцев"))
